@@ -29,6 +29,12 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     console.log(form);
                     this._router.navigate(['Albums']);
                 };
+                ContactComponent.prototype.routerCanDeactivate = function (next, previous) {
+                    // console.log("next", next);
+                    // console.log("previous", previous);
+                    // if (this.form.dirty)
+                    return confirm("Are you sure?");
+                };
                 ContactComponent = __decorate([
                     core_1.Component({
                         templateUrl: '/app/contact.component.html'
